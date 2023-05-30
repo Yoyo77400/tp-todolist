@@ -11,7 +11,6 @@ export default function Task () {
     const task = useSelector((state) => state.tasks.value);
     let taskContent;
     let completedTask = {};
-    let taskName;
     
     const handleCompletedTask = (props) => {
 
@@ -25,22 +24,22 @@ export default function Task () {
                 };
             }
             if(data.urgent){
-            return (<div className={styles.task}>
+            return <><div className={styles.task}>
                 <div className={styles.taskSection}>
                     <input type="checkbox" className={styles.completeCheckbox} onChange={() => handleCompletedTask(data)} />
                     <p style={completedTask}>{data.name}</p>
                     <span className={styles.urgentBadge}>URGENT</span>
                 </div>
                 <FontAwesomeIcon icon={faTrash} className={styles.delete} onClick={()=>dispatch(removeTask())}/>
-            </div>)
+            </div></>
             }else{
-                return (<div className={styles.task}>
+                return <><div className={styles.task}>
                 <div className={styles.taskSection}>
                     <input type="checkbox" className={styles.completeCheckbox} onChange={() => handleCompletedTask(data)} />
                     <p style={completedTask}>{data.name}</p>
                 </div>
                 <FontAwesomeIcon icon={faTrash} className={styles.delete} onClick={()=>dispatch(removeTask())}/>
-            </div>)
+            </div></>
             }
         })
     }

@@ -24,7 +24,6 @@ function Home() {
       completed: false,
     }
     dispatch(addTask(myTask));
-    console.log(task);
   }
 
   return (
