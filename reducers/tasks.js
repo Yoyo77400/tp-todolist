@@ -17,13 +17,8 @@ export const taskSlice = createSlice({
             // console.log(urgent)
         },
         completeTask: (state, action) => {
-            console.log(action.payload, state.value)
-                if (action.payload) {
-                    
-                }else{
-                    
-                }
-            ;
+            let index = state.value.findIndex(e => e.id === action.payload);
+            state.value[index] = {...state.value[index], completed: !state.value[index].completed};
         },
         removeTask: (state, action) => {
             state.value.pop(action.payload);
