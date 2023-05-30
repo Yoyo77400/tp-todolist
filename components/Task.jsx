@@ -10,7 +10,7 @@ export default function Task () {
     const dispatch = useDispatch();
     const task = useSelector((state) => state.tasks.value);
     let taskContent;
-    let completedTask = {};
+    
     
     const handleCompletedTask = (props) => {
 
@@ -18,6 +18,7 @@ export default function Task () {
     }
     if (task.length > 0) {
         taskContent = task.map((data) => {
+            let completedTask = {};
             if(data.completed){
                 completedTask = {
                     textDecoration: 'line-through',
